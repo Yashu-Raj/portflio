@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { JetBrains_Mono } from "next/font/google";
 import Image from "next/image";
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 /* ------------------------------------------------------------------ */
@@ -496,7 +497,7 @@ function OperatorProfile() {
     <Panel title="operator.profile" meta="access: public">
       <div className="cyber-portrait-frame relative mx-auto aspect-square w-full max-w-56 overflow-hidden border border-white/10 bg-black">
         <Image
-          src="/operator-profile.png"
+          src={`${BASE_PATH}/operator-profile.png`}
           alt="White hooded cyber-operator emblem on a black background"
           width={513}
           height={500}
